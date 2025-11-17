@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-pink-100 via-purple-100 to-pink-200;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white bg-opacity-40 backdrop-blur-lg rounded-3xl shadow-xl border border-white border-opacity-30;
+  }
+
+  .btn-cute {
+    @apply px-8 py-4 rounded-full font-bold text-white shadow-lg transform transition-all duration-200 hover:scale-105 active:scale-95;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-pink-400 to-purple-500 hover:from-pink-500 hover:to-purple-600;
+  }
+
+  .streak-badge {
+    @apply inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-yellow-300 to-orange-400 text-white font-bold text-2xl shadow-lg;
+  }
+}
+
+.hearts-animation {
+  position: absolute;
+  animation: hearts 1s ease-out forwards;
+  pointer-events: none;
+}
+
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  pointer-events: none;
+  animation: confetti-fall 3s ease-out forwards;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
